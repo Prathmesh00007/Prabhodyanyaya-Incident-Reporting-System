@@ -10,7 +10,7 @@ const { GoogleGenerativeAI } = require("@google/generative-ai");
 require('dotenv').config();
 const incidentModel = require("../models/incident.model.js");
 const userModel = require('../models/user.model.js');
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API || 'AIzaSyCt5aHQnQRI5TWCPwn5M1OcmjUb9Udkb1k');
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API);
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
 exports.predictSeverity = async (description) => {
